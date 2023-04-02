@@ -8,7 +8,6 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-
 public class SendMailForm {
     private String from;
     private String to;

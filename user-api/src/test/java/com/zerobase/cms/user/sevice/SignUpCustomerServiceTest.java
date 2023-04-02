@@ -1,6 +1,6 @@
 package com.zerobase.cms.user.sevice;
 
-import com.zerobase.cms.user.domain.SingUpForm;
+import com.zerobase.cms.user.domain.SignUpForm;
 import com.zerobase.cms.user.domain.model.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ class SignUpCustomerServiceTest {
     private SignUpCustomerService service;
     @Test
     void signUp(){
-        SingUpForm from = SingUpForm.builder()
+        SignUpForm from = SignUpForm.builder()
                 .name("name")
                 .birth(LocalDate.now())
                 .email("abc@gmail.com")
