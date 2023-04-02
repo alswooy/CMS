@@ -1,9 +1,8 @@
 package com.zerobase.cms.user.domain.model;
 
-import com.zerobase.cms.user.domain.SingUpForm;
+import com.zerobase.cms.user.domain.SignUpForm;
 import lombok.*;
 import org.hibernate.envers.AuditOverride;
-import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -13,6 +12,7 @@ import java.util.Locale;
 @Entity
 @Getter
 @Builder
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @AuditOverride(forClass = BaseEntity.class)
@@ -32,7 +32,7 @@ public class Customer extends BaseEntity {
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
     private boolean verify;
-    public static Customer from(SingUpForm form){
+    public static Customer from(SignUpForm form){
         return Customer.builder()
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
                 .password(form.getPassword())

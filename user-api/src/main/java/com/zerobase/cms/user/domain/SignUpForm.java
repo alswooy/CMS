@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SingUpForm {
+public class SignUpForm {
     private String email;
     private String name;
     private String password;
