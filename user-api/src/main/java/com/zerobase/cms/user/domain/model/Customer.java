@@ -18,7 +18,6 @@ import java.util.Locale;
 @AuditOverride(forClass = BaseEntity.class)
 public class Customer extends BaseEntity {
     @Id
-    @Column(name = "id",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -32,6 +31,10 @@ public class Customer extends BaseEntity {
     private LocalDateTime verifyExpiredAt;
     private String verificationCode;
     private boolean verify;
+
+    @Column(columnDefinition = "int default 0")
+    private Integer balance;
+
     public static Customer from(SignUpForm form){
         return Customer.builder()
                 .email(form.getEmail().toLowerCase(Locale.ROOT))
